@@ -3,7 +3,6 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin
-from cms.utils.compat.dj import python_2_unicode_compatible
 
 if hasattr(settings, "COLUMN_WIDTH_CHOICES"):
     WIDTH_CHOICES = settings.COLUMN_WIDTH_CHOICES
@@ -19,7 +18,6 @@ else:
     )
 
 
-@python_2_unicode_compatible
 class MultiColumns(CMSPlugin):
     """
     A plugin that has sub Column classes
@@ -36,7 +34,6 @@ class MultiColumns(CMSPlugin):
         return _(u"%s columns") % len(plugins)
 
 
-@python_2_unicode_compatible
 class Column(CMSPlugin):
     """
     A Column for the MultiColumns Plugin
